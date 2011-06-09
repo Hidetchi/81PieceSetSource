@@ -10,77 +10,85 @@ package
 	public class PieceSetSource extends Sprite 
 	{
 		[Embed(source = "/pieces_ryoko1/Sou.png")]
-		public var sou:Class
+		private var sou:Class
 		[Embed(source = "/pieces_ryoko1/Sgyoku.png")]
-		public var sgyoku:Class
+		private var sgyoku:Class
 		[Embed(source = "/pieces_ryoko1/Shi.png")]
-		public var shi:Class
+		private var shi:Class
 		[Embed(source = "/pieces_ryoko1/Sryu.png")]
-		public var sryu:Class
+		private var sryu:Class
 		[Embed(source = "/pieces_ryoko1/Skaku.png")]
-		public var skaku:Class
+		private var skaku:Class
 		[Embed(source = "/pieces_ryoko1/Suma.png")]
-		public var suma:Class
+		private var suma:Class
 		[Embed(source = "/pieces_ryoko1/Skin.png")]
-		public var skin:Class
+		private var skin:Class
 		[Embed(source = "/pieces_ryoko1/Sgin.png")]
-		public var sgin:Class
+		private var sgin:Class
 		[Embed(source = "/pieces_ryoko1/Sngin.png")]
-		public var sngin:Class
+		private var sngin:Class
 		[Embed(source = "/pieces_ryoko1/Skei.png")]
-		public var skei:Class
+		private var skei:Class
 		[Embed(source = "/pieces_ryoko1/Snkei.png")]
-		public var snkei:Class
+		private var snkei:Class
 		[Embed(source = "/pieces_ryoko1/Skyo.png")]
-		public var skyo:Class
+		private var skyo:Class
 		[Embed(source = "/pieces_ryoko1/Snkyo.png")]
-		public var snkyo:Class
+		private var snkyo:Class
 		[Embed(source = "/pieces_ryoko1/Sfu.png")]
-		public var sfu:Class
+		private var sfu:Class
 		[Embed(source = "/pieces_ryoko1/Sto.png")]
-		public var sto:Class
+		private var sto:Class
 		[Embed(source = "/pieces_ryoko1/Gou.png")]
-		public var gou:Class
+		private var gou:Class
 		[Embed(source = "/pieces_ryoko1/Ggyoku.png")]
-		public var ggyoku:Class
+		private var ggyoku:Class
 		[Embed(source = "/pieces_ryoko1/Ghi.png")]
-		public var ghi:Class
+		private var ghi:Class
 		[Embed(source = "/pieces_ryoko1/Gryu.png")]
-		public var gryu:Class
+		private var gryu:Class
 		[Embed(source = "/pieces_ryoko1/Gkaku.png")]
-		public var gkaku:Class
+		private var gkaku:Class
 		[Embed(source = "/pieces_ryoko1/Guma.png")]
-		public var guma:Class
+		private var guma:Class
 		[Embed(source = "/pieces_ryoko1/Gkin.png")]
-		public var gkin:Class
+		private var gkin:Class
 		[Embed(source = "/pieces_ryoko1/Ggin.png")]
-		public var ggin:Class
+		private var ggin:Class
 		[Embed(source = "/pieces_ryoko1/Gngin.png")]
-		public var gngin:Class
+		private var gngin:Class
 		[Embed(source = "/pieces_ryoko1/Gkei.png")]
-		public var gkei:Class
+		private var gkei:Class
 		[Embed(source = "/pieces_ryoko1/Gnkei.png")]
-		public var gnkei:Class
+		private var gnkei:Class
 		[Embed(source = "/pieces_ryoko1/Gkyo.png")]
-		public var gkyo:Class
+		private var gkyo:Class
 		[Embed(source = "/pieces_ryoko1/Gnkyo.png")]
-		public var gnkyo:Class
+		private var gnkyo:Class
 		[Embed(source = "/pieces_ryoko1/Gfu.png")]
-		public var gfu:Class
+		private var gfu:Class
 		[Embed(source = "/pieces_ryoko1/Gto.png")]
-		public var gto:Class
+		private var gto:Class
+
+		private var _piece_classes:Array = new Array(2);
 		
-		public var board_back:Class
-		public var board_masu:Class
-		public var deadSquare:Class
-		public var board_scoord_e:Class
-		public var board_gcoord_e:Class
-		public var board_shand:Class
-		public var board_ghand:Class
-		public var board_bg:Class
+		private var board_back:Class
+		private var board_masu:Class
+		private var deadSquare:Class
+		private var board_scoord_e:Class
+		private var board_gcoord_e:Class
+		private var board_shand:Class
+		private var board_ghand:Class
+		private var board_bg:Class
 		
 		public function PieceSetSource():void 
 		{
+			_piece_classes[0] = new Array(sgyoku, shi, skaku, skin, sgin, skei, skyo, sfu, sou, sryu, suma, null, sngin, snkei, snkyo, sto);
+			_piece_classes[1] = new Array(ggyoku, ghi, gkaku, gkin, ggin, gkei, gkyo, gfu, gou, gryu, guma, null, gngin, gnkei, gnkyo, gto);
+		}
+		
+		public function get pieceClasses():Array {
+			return _piece_classes;
 		}
 	}
 	
